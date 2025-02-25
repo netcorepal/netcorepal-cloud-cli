@@ -1,3 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Cocona;
 
-Console.WriteLine("Hello, World!");
+var builder = CoconaApp.CreateBuilder();
+var app = builder.Build();
+
+app.AddCommand(() =>
+{
+    Console.WriteLine("Welcome!");
+});
+
+app.Run();
