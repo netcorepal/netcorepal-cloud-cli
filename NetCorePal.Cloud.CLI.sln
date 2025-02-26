@@ -4,9 +4,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7F1476D5-08F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AB207A63-021A-421D-9EB6-45CB6BCF91B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLI.Toolkit", "CLI.Toolkit\CLI.Toolkit.csproj", "{1635469F-9306-46AA-9356-BD02AA66E504}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.Cloud.CLI.Toolkit", "NetCorePal.Cloud.CLI.Toolkit\NetCorePal.Cloud.CLI.Toolkit.csproj", "{1635469F-9306-46AA-9356-BD02AA66E504}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLI.Toolkit.Test", "CLI.Toolkit.Test\CLI.Toolkit.Test.csproj", "{9B65F891-EA77-4B19-95AA-1726D343CC18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCorePal.Cloud.CLI.Toolkit.Test", "NetCorePal.Cloud.CLI.Toolkit.Test\NetCorePal.Cloud.CLI.Toolkit.Test.csproj", "{9B65F891-EA77-4B19-95AA-1726D343CC18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
