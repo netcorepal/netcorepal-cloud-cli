@@ -1,0 +1,26 @@
+name: preview build
+
+on:
+  push:
+    branches: [ main, dev ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4.0.0
+      with:
+        dotnet-version: |
+          9.0.x
+        global-json-file: global.json
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build -c Release --no-restore
+    - name: Test
+      run: dotnet test # --verbosity normal
+    - name: Pack MyGet
+      run: dotnet pack -c Release --version-suffix preview.1.`date +%y%m%d%H%M` -o ./  -p:IncludeSymbols=true -p:SymbolPackageFormat=snupkg
+    - name: Push MyGet
+      run: dotnet nuget push '*.nupkg' -s https://www.myget.org/F/netcorepal/api/v3/index.json -k ${{ secrets.MYGET_API_KEY }} --skip-duplicate
