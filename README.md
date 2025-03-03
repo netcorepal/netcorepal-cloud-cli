@@ -1,5 +1,12 @@
 # DDD 战术框架脚手架命令行工具
-一个用于快速生成基于 [netcorepal-cloud-framework](https://github.com/netcorepal/netcorepal-cloud-framework) 项目的模板代码
+
+[![Release Build](https://img.shields.io/github/actions/workflow/status/netcorepal/netcorepal-cloud-cli/release.yml?label=release%20build)](https://github.com/netcorepal/netcorepal-cloud-cli/.github/workflows/release.yml)
+[![Preview Build](https://img.shields.io/github/actions/workflow/status/netcorepal/netcorepal-cloud-cli/preview.yml?label=preview%20build)](https://github.com/netcorepal/netcorepal-cloud-cli/.github/workflows/preview.yml)
+[![NuGet](https://img.shields.io/nuget/v/NetCorePal.Cloud.CLI.Toolkit.svg)](https://www.nuget.org/packages/NetCorePal.Cloud.CLI.Toolkit)
+[![MyGet Preview](https://img.shields.io/myget/netcorepal/vpre/NetCorePal.Cloud.CLI.Toolkit?label=preview)](https://www.myget.org/feed/netcorepal/package/nuget/NetCorePal.Cloud.CLI.Toolkit)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/netcorepal/netcorepal-cloud-cli/blob/main/LICENSE)
+
+用于快速生成基于 [netcorepal-cloud-framework](https://github.com/netcorepal/netcorepal-cloud-framework) 项目的模板代码
 
 ## 📦 安装
 
