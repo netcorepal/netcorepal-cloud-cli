@@ -9,14 +9,11 @@ public class DirectoryExistsAttribute : ValidationAttribute
         ValidationContext validationContext)
     {
         if (value is null) return ValidationResult.Success;
-        
+
         var path = Path.GetFullPath((string)value);
         try
         {
-            if (!IsValidPathFormat(path))
-            {
-                return new ValidationResult($"路径格式无效: {path}");
-            }
+            if (!IsValidPathFormat(path)) return new ValidationResult($"路径格式无效: {path}");
 
             return Directory.Exists(path)
                 ? ValidationResult.Success
@@ -31,7 +28,7 @@ public class DirectoryExistsAttribute : ValidationAttribute
             return new ValidationResult($"路径解析失败: {path}");
         }
     }
-    
+
     private static bool IsValidPathFormat(string path)
     {
         return !string.IsNullOrWhiteSpace(path) &&

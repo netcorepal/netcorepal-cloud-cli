@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using Microsoft.Extensions.Logging;
 using NetCorePal.Cloud.CLI.Toolkit.CommonParameters;
-using NetCorePal.Cloud.CLI.Toolkit.Utils;
+using NetCorePal.Cloud.CLI.Toolkit.Utils.Interface;
 
 namespace NetCorePal.Cloud.CLI.Toolkit.Services.Generation;
 
-public abstract class GenerationBase(CodeGenerationHelper codeGenerationHelper, ILogger logger)
+public abstract class GenerationBase(ICodeGenerationHelper codeGenerationHelper, ILogger logger)
 {
     protected void GenerateCore(
         GenerationCommonParameters parameters,
@@ -30,12 +30,9 @@ public abstract class GenerationBase(CodeGenerationHelper codeGenerationHelper, 
             var namespaceValue = codeGenerationHelper.DetermineNamespace(outputDir);
             var content = contentGenerator(namespaceValue);
 
-            File.WriteAllText(fullPath, content, new UTF8Encoding(encoderShouldEmitUTF8Identifier: true));
+            File.WriteAllText(fullPath, content, new UTF8Encoding(true));
 
-            if (!File.Exists(fullPath))
-            {
-                throw new FileNotFoundException("文件生成失败，请检查写入权限");
-            }
+            if (!File.Exists(fullPath)) throw new FileNotFoundException("文件生成失败，请检查写入权限");
 
             logger.LogInformation("📁 文件生成路径: {FullPath}", fullPath);
         }

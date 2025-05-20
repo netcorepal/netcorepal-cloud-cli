@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
 using NetCorePal.Cloud.CLI.Toolkit.CommonParameters;
-using NetCorePal.Cloud.CLI.Toolkit.Utils;
+using NetCorePal.Cloud.CLI.Toolkit.Utils.Interface;
 
 namespace NetCorePal.Cloud.CLI.Toolkit.Services.Generation.Generators;
 
 public class CommandGenerator(
-    CodeGenerationHelper codeGenerator,
-    ILogger<AggregateRootGenerator> logger)
+    ICodeGenerationHelper codeGenerator,
+    ILogger<CommandGenerator> logger)
     : GenerationBase(codeGenerator, logger)
 {
     public void Generate(
@@ -18,7 +18,7 @@ public class CommandGenerator(
             var (genericPart1, genericPart2) = returnType is null
                 ? (string.Empty, string.Empty)
                 : ($"<{returnType}>", $",<{returnType}>");
-            
+
             return $$"""
                      using FluentValidation;
                      using NetCorePal.Extensions.Primitives;
@@ -47,6 +47,6 @@ public class CommandGenerator(
                          }
                      }
                      """;
-        });
+        }, "Command");
     }
 }

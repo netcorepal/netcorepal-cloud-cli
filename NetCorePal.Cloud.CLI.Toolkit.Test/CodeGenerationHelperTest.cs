@@ -6,15 +6,15 @@ namespace NetCorePal.Cloud.CLI.Toolkit.Test;
 
 public class CodeGenerationHelperTests
 {
-    private readonly Mock<IProjectFinder> _mockProjectFinder;
     private readonly CodeGenerationHelper _helper;
+    private readonly Mock<IProjectFinder> _mockProjectFinder;
 
     public CodeGenerationHelperTests()
     {
         _mockProjectFinder = new Mock<IProjectFinder>();
         _helper = new CodeGenerationHelper(_mockProjectFinder.Object);
     }
-    
+
     [Fact]
     public void DetermineNamespace_WithValidProject_ReturnsCorrectNamespace()
     {
