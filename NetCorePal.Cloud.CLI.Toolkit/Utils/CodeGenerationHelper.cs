@@ -6,7 +6,7 @@ namespace NetCorePal.Cloud.CLI.Toolkit.Utils;
 /// <summary>
 ///     代码生成工具类
 /// </summary>
-public class CodeGenerationHelper(IProjectFinder projectFinder)
+public class CodeGenerationHelper(IProjectFinder projectFinder) : ICodeGenerationHelper
 {
     private readonly IProjectFinder _projectFinder =
         projectFinder ?? throw new ArgumentNullException(nameof(projectFinder));

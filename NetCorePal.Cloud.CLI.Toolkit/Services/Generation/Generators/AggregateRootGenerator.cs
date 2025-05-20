@@ -1,12 +1,12 @@
 ﻿using Microsoft.Extensions.Logging;
 using NetCorePal.Cloud.CLI.Toolkit.CommonParameters;
 using NetCorePal.Cloud.CLI.Toolkit.Const;
-using NetCorePal.Cloud.CLI.Toolkit.Utils;
+using NetCorePal.Cloud.CLI.Toolkit.Utils.Interface;
 
 namespace NetCorePal.Cloud.CLI.Toolkit.Services.Generation.Generators;
 
 public class AggregateRootGenerator(
-    CodeGenerationHelper codeGenerator,
+    ICodeGenerationHelper codeGenerator,
     ILogger<AggregateRootGenerator> logger)
     : GenerationBase(codeGenerator, logger)
 {

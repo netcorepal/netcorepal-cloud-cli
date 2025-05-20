@@ -1,11 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
 using NetCorePal.Cloud.CLI.Toolkit.CommonParameters;
-using NetCorePal.Cloud.CLI.Toolkit.Utils;
+using NetCorePal.Cloud.CLI.Toolkit.Utils.Interface;
 
 namespace NetCorePal.Cloud.CLI.Toolkit.Services.Generation.Generators;
 
 public class DomainEventGenerator(
-    CodeGenerationHelper codeGenerator,
+    ICodeGenerationHelper codeGenerator,
     ILogger<DomainEventGenerator> logger)
     : GenerationBase(codeGenerator, logger)
 {

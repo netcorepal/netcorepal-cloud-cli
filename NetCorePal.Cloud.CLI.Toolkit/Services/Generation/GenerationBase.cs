@@ -1,11 +1,11 @@
 ﻿using System.Text;
 using Microsoft.Extensions.Logging;
 using NetCorePal.Cloud.CLI.Toolkit.CommonParameters;
-using NetCorePal.Cloud.CLI.Toolkit.Utils;
+using NetCorePal.Cloud.CLI.Toolkit.Utils.Interface;
 
 namespace NetCorePal.Cloud.CLI.Toolkit.Services.Generation;
 
-public abstract class GenerationBase(CodeGenerationHelper codeGenerationHelper, ILogger logger)
+public abstract class GenerationBase(ICodeGenerationHelper codeGenerationHelper, ILogger logger)
 {
     protected void GenerateCore(
         GenerationCommonParameters parameters,

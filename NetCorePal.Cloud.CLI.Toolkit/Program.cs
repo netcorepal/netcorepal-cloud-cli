@@ -16,7 +16,7 @@ var builder = CoconaApp.CreateBuilder(
 builder.Services
     .AddLogging(logging => logging.AddConsole())
     .AddSingleton<IProjectFinder, ProjectFinder>()
-    .AddSingleton<CodeGenerationHelper>()
+    .AddSingleton<ICodeGenerationHelper, CodeGenerationHelper>()
     .AddScoped<AggregateRootGenerator>()
     .AddScoped<CommandGenerator>()
     .AddScoped<RepositoryGenerator>()
