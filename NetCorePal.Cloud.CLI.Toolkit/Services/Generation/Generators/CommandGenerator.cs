@@ -6,7 +6,7 @@ namespace NetCorePal.Cloud.CLI.Toolkit.Services.Generation.Generators;
 
 public class CommandGenerator(
     CodeGenerationHelper codeGenerator,
-    ILogger<AggregateRootGenerator> logger)
+    ILogger<CommandGenerator> logger)
     : GenerationBase(codeGenerator, logger)
 {
     public void Generate(
@@ -47,6 +47,6 @@ public class CommandGenerator(
                          }
                      }
                      """;
-        });
+        }, "Command");
     }
 }
