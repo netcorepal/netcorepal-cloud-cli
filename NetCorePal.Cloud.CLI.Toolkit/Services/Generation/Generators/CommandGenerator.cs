@@ -18,7 +18,7 @@ public class CommandGenerator(
             var (genericPart1, genericPart2) = returnType is null
                 ? (string.Empty, string.Empty)
                 : ($"<{returnType}>", $",<{returnType}>");
-            
+
             return $$"""
                      using FluentValidation;
                      using NetCorePal.Extensions.Primitives;

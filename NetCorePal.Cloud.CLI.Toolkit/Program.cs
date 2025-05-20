@@ -1,9 +1,9 @@
-﻿using NetCorePal.Cloud.CLI.Toolkit.Commands;
-using NetCorePal.Cloud.CLI.Toolkit.Services.Generation.Generators;
-using NetCorePal.Cloud.CLI.Toolkit.Utils;
-using Cocona;
+﻿using Cocona;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using NetCorePal.Cloud.CLI.Toolkit.Commands;
+using NetCorePal.Cloud.CLI.Toolkit.Services.Generation.Generators;
+using NetCorePal.Cloud.CLI.Toolkit.Utils;
 using NetCorePal.Cloud.CLI.Toolkit.Utils.Interface;
 
 var builder = CoconaApp.CreateBuilder(

@@ -11,7 +11,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Cocona" Version="2.2.0" />
+        <PackageReference Include="Cocona" Version="2.2.0"/>
     </ItemGroup>
 
 </Project>

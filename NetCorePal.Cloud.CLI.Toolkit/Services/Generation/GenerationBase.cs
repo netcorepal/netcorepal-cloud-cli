@@ -30,12 +30,9 @@ public abstract class GenerationBase(CodeGenerationHelper codeGenerationHelper, 
             var namespaceValue = codeGenerationHelper.DetermineNamespace(outputDir);
             var content = contentGenerator(namespaceValue);
 
-            File.WriteAllText(fullPath, content, new UTF8Encoding(encoderShouldEmitUTF8Identifier: true));
+            File.WriteAllText(fullPath, content, new UTF8Encoding(true));
 
-            if (!File.Exists(fullPath))
-            {
-                throw new FileNotFoundException("文件生成失败，请检查写入权限");
-            }
+            if (!File.Exists(fullPath)) throw new FileNotFoundException("文件生成失败，请检查写入权限");
 
             logger.LogInformation("📁 文件生成路径: {FullPath}", fullPath);
         }
